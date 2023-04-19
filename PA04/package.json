@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "mongod": "^2.0.0",
     "mongoose": "^7.0.4",
     "package.json": "^0.0.0"
   }
