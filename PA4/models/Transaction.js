@@ -2,11 +2,11 @@
 const mongoose = require( 'mongoose' );
 const Schema = mongoose.Schema;
 
-var TransactionSchema = Schema({
+var Transaction = Schema({
   description: String,
   amount: Number,
   category: String,
   date: Date,
 } );
 
-module.exports = mongoose.model( 'TransactionItem', TransactionSchema );
+module.exports = mongoose.model( 'TransactionItem', Transaction);
