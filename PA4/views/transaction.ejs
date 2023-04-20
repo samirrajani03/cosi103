@@ -1,5 +1,13 @@
 <h1> Transactions for <%= user.username %> </h1>
 <p>Here is your list of tasks!</p>
+<div class="container border text-center">
+    <div class="row">
+    <div class="col p-2"><a href="/transaction?groupBy=category" class="btn btn-primary">group by category</a></div>
+    <div class="col p-2"><a href="/transaction?sortBy=category" class="btn btn-primary">sort by category</a></div>
+    <div class="col p-2"><a href="/transaction?sortBy=amount" class="btn btn-primary">sort by amount</a></div>
+    <div class="col p-2"><a href="/transaction?sortBy=description" class="btn btn-primary">sort by description</a></div>
+    <div class="col p-2"><a href="/transaction?sortBy=date" class="btn btn-primary">sort by date</a></div>
+</div>
 <style>
     table {
       font-family: arial, sans-serif;
