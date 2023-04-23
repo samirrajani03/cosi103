@@ -1,12 +1,12 @@
 <h1> Transactions for <%= user.username %> </h1>
-<p>Here is your list of tasks!</p>
+<p>Here is your list of things to do!</p>
 <div class="container border text-center">
     <div class="row">
-    <div class="col p-2"><a href="/transaction?groupBy=category" class="btn btn-primary">group by category</a></div>
-    <div class="col p-2"><a href="/transaction?sortBy=category" class="btn btn-primary">sort by category</a></div>
-    <div class="col p-2"><a href="/transaction?sortBy=amount" class="btn btn-primary">sort by amount</a></div>
-    <div class="col p-2"><a href="/transaction?sortBy=description" class="btn btn-primary">sort by description</a></div>
-    <div class="col p-2"><a href="/transaction?sortBy=date" class="btn btn-primary">sort by date</a></div>
+    <div class="col p-2"><a href="/transaction?groupBy=category" class="btn btn-primary">Group by Category</a></div>
+    <div class="col p-2"><a href="/transaction?sortBy=category" class="btn btn-primary">Sort by Category</a></div>
+    <div class="col p-2"><a href="/transaction?sortBy=amount" class="btn btn-primary">Sort by Amount</a></div>
+    <div class="col p-2"><a href="/transaction?sortBy=description" class="btn btn-primary">Sort by Description</a></div>
+    <div class="col p-2"><a href="/transaction?sortBy=date" class="btn btn-primary">Sort by Date</a></div>
 </div>
 <style>
     table {
@@ -36,31 +36,25 @@
             <th>edit</th>
         </b>
     </tr>
-    <% if (items.length > 0) { %>
-        <% items.forEach(item => { %>
-            <tr>
-                <td> <%= item.description %></td>
-                <td> <%= item.amount %></td>
-                <td> <%= item.category %></td>
-                <td> <%= item.date %></td>
-                <td>
-                    <a href="/transaction/remove/<%=item._id %>">
-                        <i class="bi bi-trash"></i>
-                    </a>
-                </td>
-                <td>
-                    <a 
-                       href="/transaction/editTransaction/<%=item._id %>">
-                      <i class="bi bi-pencil-square"></i>
-                    </a>
-                </td>
-            </tr>
-        <% }) %>
-    <% } else { %>
+    <% items.forEach(item => { %>
         <tr>
-            <td colspan="6">No transactions found.</td>
+            <td> <%= item.description %></td>
+            <td> <%= item.amount %></td>
+            <td> <%= item.category %></td>
+            <td> <%= item.date %></td>
+            <td>
+                <a href="/transaction/remove/<%=item._id %>">
+                    <i class="bi bi-trash"></i>
+                </a>
+            </td>
+            <td>
+                <a 
+                   href="/transaction/editTransaction/<%=item._id %>">
+                  <i class="bi bi-pencil-square"></i>
+                </a>
+            </td>
         </tr>
-    <% } %>
+    <% }) %>
 </table>
 
 <h1> Add a New Transaction</h1>
