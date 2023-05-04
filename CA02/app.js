@@ -1,3 +1,4 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -9,6 +10,7 @@ const toDoRouter = require('./routes/todo');
 const GPTRouter = require('./routes/gpt');
 
 const User = require('./models/User');
+
 
 /* **************************************** */
 /*  Connecting to a Mongo Database Server   */

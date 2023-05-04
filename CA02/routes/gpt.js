@@ -15,7 +15,7 @@ router.get('/gpt/', async (req, res, next) => {
 });
 
 router.post('/gpt', async (req, res, next) => {
-  const input = "Create an acronym from the word " + req.body.acronym;
+  const input = "Create an acronym for the word " + req.body.acronym + " and list the word for each letter";
   const val = await openai.createCompletion({
     model: "text-davinci-003",
     prompt: input,
